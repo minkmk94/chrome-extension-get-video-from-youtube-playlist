@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube Tool</title>
+  <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/lib/dataTables.min.css">
+  <link rel="stylesheet" href="assets/css/lib/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="assets/css/handle.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="header">
+          <h1>Video Information</h1>
+        </div>
+        <table id="data" class="table">
+          <thead>
+            <tr>
+              <th scope="col">Video ID</th>
+              <th class="text-center" scope="col">Video title</th>
+              <th scope="col">Channel name</th>
+              <th class="text-center" scope="col">Link</th>
+              <th class="text-center" scope="col">Thumbnail</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="spinner">
+    <div class="d-flex justify-content-center">
+      <div class="lds-roller mb-3">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/lib/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/lib/popper.min.js"></script>
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script src="assets/js/lib/pdfmake.min.js"></script>
+  <script src="assets/js/lib/vfs_fonts.js"></script>
+  <script src="assets/js/lib/datatables.min.js"></script>
+  <script src="assets/js/lib/lodash.min.js"></script>
+  <script src="assets/js/handle.js"></script>
+</body>
+
+</html>
