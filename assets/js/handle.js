@@ -18,16 +18,19 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             { "data": "channelTitle", "width": "15%" },
             {
               "data": "url",
-              "render": (data) => `<a href="${data}">${data}</a>`
+              "render": (data) => `<a target="_blank" href="${data}">${data}</a>`
             },
             {
               "data": "thumbnail",
               "width": "20%",
               "render": (data, type, row, meta) => {
                 let url = data != '' ? data : chrome.extension.getURL('assets/images/not-available.png');
-                return type === 'export' ? url : `<a target="blank" href="${row['url']}"><img class="center" src="${url}"/></a>`
+                return type === 'export' ? url : `<a target="_blank" href="${row['url']}"><img class="center" src="${url}"/></a>`
               }
             },
+          ],
+          columnDefs: [
+            { "orderable": false, "targets": -1 }
           ],
           dom: 'Bfrtip',
           buttons: [
@@ -58,7 +61,16 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 orthogonal: 'export'
               }
             }
-          ]
+          ],
+          "oLanguage": {
+            "oPaginate": {
+              "sFirst": "Trang đầu",
+              "sPrevious": "Trước",
+              "sNext": "Sau",
+              "sLast": "Trang cuối"
+            },
+            "sInfo": "Đang hiển thị kết quả từ _START_ đến _END_ (Tổng _TOTAL_ kết quả)"
+          }
         });
       }
     });
